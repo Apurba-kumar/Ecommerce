@@ -41,10 +41,19 @@
         <!-- partial -->
         <div class="main-panel">
             <div class="content-wrapper">
+                @if (session()->has('message'))
+                <div class="alert alert-success">
+                    <button type="button" class="close"data-dismiss="alert" aria-hidden="true">
+                        x
+                    </button>
+                    {{ session()->get('message') }}
+
+                </div>
+            @endif
                 <div class="div_center">
                     <h1 class="font_size">Product</h1>
-                    <form>
-
+                    <form  action="{{ url('/add_product') }}" method="POST" enctype="multipart/form-data">
+                      @csrf
                     <div class="div-design">
                         <label>Product Title : </label>
                         <input class="text_color" type="text" name="title" placeholder="Write title" required="">
@@ -73,7 +82,10 @@
                         <label>Product Category : </label>
                         <select class="text_color" name="category" required="">
                             <option value="" selected>Add product category </option>
-                            <option>shirt</option>
+                            @foreach ($category as $category)
+                            <option value="$category->category_name">{{ $category->category_name }}</option>
+                            @endforeach
+
                         </select>
                     </div>
                     <div class="div-design" style="padding-left: 110px">
