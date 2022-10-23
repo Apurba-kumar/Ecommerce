@@ -15,6 +15,12 @@
         font-size: 40px;
         padding-top: 20px;
      }
+     .table tbody tr td img{
+        width: 80%;
+        height: 150px;
+        border-radius: 0%;
+
+     }
 </style>
   </head>
   <body>
@@ -43,13 +49,21 @@
                 </thead>
                 <tbody class="center">
                     <tr>
-                        <td>toy</td>
-                        <td>good</td>
-                        <td>10</td>
-                        <td>toy</td>
-                        <td>300</td>
-                        <td>240</td>
-                        <td></td>
+
+                        @foreach ($product as $product)
+                                <tr class="bg-dark text-white font-weight-bold">
+                                    <td>{{ $product->title }}</td>
+                                    <td>{{ $product->description }}</td>
+                                    <td>{{ $product->quantity }}</td>
+                                    <td>{{ $product->category }}</td>
+                                    <td>{{ $product->price }}</td>
+                                    <td>{{ $product->discount_price}}</td>
+                                    <td>
+                                        <img src="/product/{{ $product->image }}" alt="" class="img-fluid mx-auto">
+                                    </td>
+                                </tr>
+                            @endforeach
+
                     </tr>
                 </tbody>
             </table>

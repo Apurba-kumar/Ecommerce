@@ -80,7 +80,7 @@
                                     <select class="text_color form-control bg-white text-dark" name="category" required="">
                                         <option value="" selected>Add product category </option>
                                              @foreach ($category as $category)
-                                        <option value="$category->category_name">{{ $category->category_name }}</option>
+                                             <option value="{{ $category->category_name }}">{{ $category->category_name }}</option>
                                         @endforeach
                                     </select>
                                 </div>
