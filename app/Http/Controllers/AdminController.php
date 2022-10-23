@@ -49,4 +49,8 @@ public function add_product(Request $request){
        return redirect()->back()->with('message','Product added successfully');
 
 }
+public function show_product(){
+    $product = product::all();
+    return view('admin.show_product', compact('product'));
+}
 }

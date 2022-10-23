@@ -51,31 +51,42 @@
                 @endif
 
                 <div class="div_center">
-                    <h2 class="h2_font">Add Category</h2>
-                    <form action="{{ url('/add_category') }}" method="POST">
-                        @csrf
 
-                        <input type="text" class="input_color" name="category" placeholder="Write category name">
-                        <input type="submit" class="btn btn-primary" name="submit" value="Add category">
-
-                    </form>
                 </div>
-                <table class="center">
-                    <tr>
-                        <td>Category Name</td>
-                        <td>Action</td>
+                <div class="row mt-5 mb-5">
+                    <div class="col-md-6 mx-auto">
+                        <h2 class="h2_font">Add Category</h2>
+                        <form action="{{ url('/add_category') }}" method="POST">
+                            @csrf
 
-                    </tr>
-
-                    @foreach ($data as $data)
-                        <tr>
-                            <td>{{ $data->category_name }}</td>
-                            <td>
-                                <a onclick="return confirm('Are you sure to delete this category?')" class="btn btn-danger" href="{{ url('delete_category', $data->id) }}">Delete</a>
-                            </td>
-                        </tr>
-                    @endforeach
-                </table>
+                            <input type="text" class="input_color form-control rounded" name="category" placeholder="Write category name">
+                            <input type="submit" class="btn btn-success form-control mt-3" name="submit" value="Add category">
+                        </form>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mx-auto">
+                        <h2 class="h2_font">Category List</h2>
+                        <table class=" table table-bordered">
+                            <thead class="bg-white">
+                                <tr>
+                                    <td>Category Name</td>
+                                    <td>Action</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($data as $data)
+                                <tr>
+                                    <td>{{ $data->category_name }}</td>
+                                    <td>
+                                        <a onclick="return confirm('Are you sure to delete this category?')" class="btn btn-danger" href="{{ url('delete_category', $data->id) }}">Delete</a>
+                                    </td>
+                                </tr>
+                            @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
         </div>
 
