@@ -34,6 +34,15 @@
         <!-- partial -->
     <div class="main-panel">
         <div class="content-wrapper">
+            @if (session()->has('message'))
+            <div class="alert alert-success">
+                <button type="button" class="close"data-dismiss="alert" aria-hidden="true">
+                    x
+                </button>
+                {{ session()->get('message') }}
+
+            </div>
+        @endif
             <h2 class="font_size">All Product</h2>
             <table class="table table-bordered">
                 <thead class="center">
@@ -45,6 +54,8 @@
                         <td>Price</td>
                         <td>Discount Price</td>
                         <td>Product Image</td>
+                        <td>Edit</td>
+                        <td>Delete</td>
                      </tr>
                 </thead>
                 <tbody class="center">
@@ -60,6 +71,12 @@
                                     <td>{{ $product->discount_price}}</td>
                                     <td>
                                         <img src="/product/{{ $product->image }}" alt="" class="img-fluid mx-auto">
+                                    </td>
+                                    <td>
+                                        <a href="{{ url('edit_product',$product->id) }}"  class="btn btn-success">Edit</a>
+                                    </td>
+                                    <td>
+                                        <a href="{{ url('delete_product',$product->id) }}" class="btn btn-danger" onclick="return confirm('Are you sure to delete this product?')">Delete</a>
                                     </td>
                                 </tr>
                             @endforeach
