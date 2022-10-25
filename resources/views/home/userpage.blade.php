@@ -20,6 +20,7 @@
       <link href="{{ asset('css/style.css') }}" rel="stylesheet" />
       <!-- responsive style -->
       <link href="{{ asset('css/responsive.css') }}" rel="stylesheet" />
+
    </head>
    <body>
       <div class="hero_area">
