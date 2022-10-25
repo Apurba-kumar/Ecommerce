@@ -6,6 +6,7 @@ use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
+use function Ramsey\Uuid\v1;
 
 class HomeController extends Controller
 {
@@ -23,5 +24,9 @@ class HomeController extends Controller
             $product = Product::paginate(3);
             return view('home.userpage', compact('product'));
         }
+    }
+    public function product_detail($id){
+          $product= Product::find($id);
+           return view('home.product_details', compact('product'));
     }
 }
