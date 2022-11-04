@@ -46,6 +46,7 @@ class HomeController extends Controller
             $cart->user_id = $user->id;
 
             $cart->product_title = $product->title;
+            // $cart->rate = $product->price;
             if ($product->discount_price != null) {
                 $cart->price = $product->discount_price * $request->quantity ;
             } else {
@@ -64,4 +65,26 @@ class HomeController extends Controller
             return redirect('login');
         }
     }
+
+    public function show_cart(){
+        if(Auth::id())
+        {
+            $id = Auth::user()->id;
+            $cart= Cart::where('user_id','=',$id)->get();
+            return view('home.show_cart', compact('cart'));
+        }
+        else
+        {
+            return redirect('login');
+        }
+
+    }
+
+    public function remove_cart($id){
+
+        $cart = Cart::find($id);
+        $cart->delete();
+        return redirect()->back()->with('message','Cart product deleted successfully');
+
+      }
 }
