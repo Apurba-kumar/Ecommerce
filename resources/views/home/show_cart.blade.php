@@ -59,6 +59,11 @@
             padding: 20px;
             text-align: center;
         }
+        .payment_button{
+            font-size: 25px;
+            padding: 20px;
+            text-align: center;
+        }
     </style>
 
 </head>
@@ -120,6 +125,12 @@
                 </table>
                 <div>
                     <h1 class="total_price"> Total Price : ${{ $totalprice }}</h1>
+                </div>
+                <div class="payment_button">
+                    <h1 style="padding: 20px">Proceed to Order</h1>
+                    <a href="{{ url('cash_order') }}" class="btn btn-danger">Cash on Delivery</a>
+                    <a href="" class="btn btn-danger">Pay Using Card</a>
+
                 </div>
             </div>
         </div>
