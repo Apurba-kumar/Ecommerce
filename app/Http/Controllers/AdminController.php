@@ -95,5 +95,14 @@ public function order(){
     return view('admin.order', compact('order'));
 }
 
+public function delivered($id){
+
+    $order=Order::find($id);
+    $order->delivery_status= "delivered";
+    $order->payment_status= "Paid";
+    $order->save();
+    return redirect()->back()->with('message', 'Product delivered successfully');
+
+}
 
 }

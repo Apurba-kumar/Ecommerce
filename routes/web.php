@@ -53,3 +53,5 @@ Route::get('/stripe/{totalprice}', [HomeController::class,'stripe']);
 Route::post('stripe/{totalprice}', [HomeController::class, 'stripePost'])->name('stripe.post');
 
 Route::get('/order', [AdminController::class,'order']);
+
+Route::get('/delivered/{id}', [AdminController::class,'delivered']);
