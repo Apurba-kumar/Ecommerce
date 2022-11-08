@@ -28,7 +28,7 @@ Route::middleware([
     })->name('dashboard');
 });
 
-Route::get('/redirect', [HomeController::class,'redirect']);
+Route::get('/redirect', [HomeController::class,'redirect'])->middleware('auth','verified');
 Route::get('/view_category', [AdminController::class,'view_category']);
 Route::get('/delete_category/{id}', [AdminController::class,'delete_category']);
 
