@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Cart;
 use App\Models\Order;
 use App\Models\Product;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -23,7 +24,21 @@ class HomeController extends Controller
     {
         $usertype = Auth::user()->usertype;
         if ($usertype == '1') {
-            return view('admin.home');
+            $total_product = Product::all()->count();
+            $total_order = Order::all()->count();
+            $total_user = User::all()->count();
+
+            $order= Order::all();
+            $total_revenue=0;
+            foreach($order as $order)
+            {
+               $total_revenue= $total_revenue + $order->price;
+            }
+
+            $total_delivered = Order::where('delivery_status','=','delivered')->get()->count();
+            $total_processing = Order::where('delivery_status','=','processing')->get()->count();
+
+            return view('admin.home', compact('total_product','total_order','total_user','total_revenue','total_delivered', 'total_processing'));
         } else {
             $product = Product::paginate(3);
             return view('home.userpage', compact('product'));
