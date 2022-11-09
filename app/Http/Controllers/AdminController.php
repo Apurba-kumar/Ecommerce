@@ -7,6 +7,10 @@ use App\Models\Category;
 use App\Models\Order;
 use App\Models\Product;
 use PDF;
+use  Notification;
+
+use App\Notifications\sendEmailNotification;
+
 
 class AdminController extends Controller
 {
@@ -111,6 +115,31 @@ public function print_pdf($id){
 $order= Order::find($id);
   $pdf =PDF::loadView('admin.pdf', compact('order'));
   return $pdf->download('order_details.pdf');
+}
+
+public function send_email($id){
+
+    $order= Order::find($id);
+
+
+    return view('admin.email_info', compact('order'));
+}
+
+public function send_user_email(Request $request, $id){
+    $order= Order::find($id);
+    $details = [
+        'greeting'=>$request->greeting,
+        'firstline'=>$request->firstline,
+        'body'=>$request->body,
+        // if you want to send some default text then you have to write below this
+        // 'body'=>'whatever message you want to send just wirte here it goes by default',
+        'button'=>$request->button,
+        'url'=>$request->url,
+        'lastline'=>$request->lastline,
+    ];
+
+    Notification::send($order, new sendEmailNotification($details));
+    return redirect()->back();
 }
 
 }

@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+
     @include('admin.css')
     <style type="text/css">
         .center {
@@ -10,6 +11,7 @@
             border: 2px solid white;
             text-align: center;
             margin-top: 40px;
+
         }
 
         .font_size {
@@ -19,8 +21,8 @@
         }
 
         .table tbody tr td img {
-            width: 80%;
-            height: 150px;
+            width: 100%;
+            height: 100px;
             border-radius: 0%;
 
         }
@@ -36,8 +38,8 @@
         <!-- partial:partials/_navbar.html -->
         @include('admin.header')
         <!-- partial -->
-        <div class="main-panel">
-            <div class="content-wrapper">
+        <div class="main-panel" >
+            <div class="content-wrapper" style="overflow-x:auto;">
                 @if (session()->has('message'))
                 <div class="alert alert-success">
                     <button type="button" class="close"data-dismiss="alert" aria-hidden="true">
@@ -48,7 +50,7 @@
                 </div>
             @endif
                 <h2 class="font_size">Order</h2>
-                <table class="table table-bordered">
+                <table class="table table-bordered" width:100%>
                     <thead class="center">
                         <tr class="bg-white font-weight-bold">
                             <td>Name</td>
@@ -63,6 +65,7 @@
                             <td>Product Image</td>
                             <td>Delivered</td>
                             <td>Print PDF</td>
+                            <td>Send Email</td>
                         </tr>
                     </thead>
                     <tbody class="center">
@@ -93,6 +96,9 @@
                             </td>
                             <td>
                                 <a href="{{ url('print_pdf', $order->id) }}" class="btn btn-secondary">Print PDF</a>
+                            </td>
+                            <td>
+                                <a href="{{ url('send_email', $order->id) }}" class="btn btn-info">Send email</a>
                             </td>
 
                         </tr>
