@@ -142,4 +142,10 @@ public function send_user_email(Request $request, $id){
     return redirect()->back();
 }
 
+public function search(Request $request){
+    $searchText= $request->search;
+    $order = Order::where('name','LIKE', "%$searchText%")->orWhere('phone','LIKE', "%$searchText%")->orWhere('product_title','LIKE', "%$searchText%")->get();
+    return view('admin.order', compact('order'));
+}
+
 }

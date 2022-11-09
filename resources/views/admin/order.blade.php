@@ -38,18 +38,25 @@
         <!-- partial:partials/_navbar.html -->
         @include('admin.header')
         <!-- partial -->
-        <div class="main-panel" >
+        <div class="main-panel">
             <div class="content-wrapper" style="overflow-x:auto;">
                 @if (session()->has('message'))
-                <div class="alert alert-success">
-                    <button type="button" class="close"data-dismiss="alert" aria-hidden="true">
-                        x
-                    </button>
-                    {{ session()->get('message') }}
+                    <div class="alert alert-success">
+                        <button type="button" class="close"data-dismiss="alert" aria-hidden="true">
+                            x
+                        </button>
+                        {{ session()->get('message') }}
 
-                </div>
-            @endif
+                    </div>
+                @endif
                 <h2 class="font_size">Order</h2>
+                <div style="padding-bottom: 20px; padding-left: 400px">
+                    <form action="{{ url('search') }}" method="GET">
+                        @csrf
+                        <input type="text" placeholder="Search Here" name="search" style="color: black">
+                        <input type="submit" class="btn btn-outline-primary" value="Search">
+                    </form>
+                </div>
                 <table class="table table-bordered" width:100%>
                     <thead class="center">
                         <tr class="bg-white font-weight-bold">
@@ -71,7 +78,7 @@
                     <tbody class="center">
                         <tr>
 
-                            @foreach ($order as $order)
+                            @forelse ($order as $order)
                         <tr class="bg-dark text-white font-weight-bold">
                             <td>{{ $order->name }}</td>
                             <td>{{ $order->email }}</td>
@@ -88,7 +95,9 @@
                             </td>
                             <td>
                                 @if ($order->delivery_status == 'processing')
-                                    <a href="{{ url('delivered', $order->id) }}" onclick="return confirm('Are you sure this prodiuct is delivered ?')" class="btn btn-success">Delivered</a>
+                                    <a href="{{ url('delivered', $order->id) }}"
+                                        onclick="return confirm('Are you sure this prodiuct is delivered ?')"
+                                        class="btn btn-success">Delivered</a>
                                 @else
                                     <p style="color:green">Delivered</p>
                                 @endif
@@ -102,7 +111,13 @@
                             </td>
 
                         </tr>
-                        @endforeach
+                        @empty
+                        <tr>
+                            <td colspan="16">
+                                No Data Found!
+                            </td>
+                        </tr>
+                        @endforelse
 
                         </tr>
                     </tbody>
