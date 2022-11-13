@@ -29,7 +29,7 @@ Route::middleware([
 });
 
 Route::get('/redirect', [HomeController::class,'redirect'])->middleware('auth','verified');
-Route::get('/view_category', [AdminController::class,'view_category']);
+Route::get('/view_category', [AdminController::class,'view_category'])->middleware('auth','verified');
 Route::get('/delete_category/{id}', [AdminController::class,'delete_category']);
 
 Route::post('/add_category',[AdminController::class, 'add_category']);
@@ -74,4 +74,8 @@ Route::post('/add_comment', [HomeController::class,'add_comment']);
 Route::post('/add_reply', [HomeController::class,'add_reply']);
 
 Route::get('/product_search', [HomeController::class,'product_search']);
+
+Route::get('/products',[HomeController::class,'product']);
+
+Route::get('/search_product', [HomeController::class,'search_product']);
 
