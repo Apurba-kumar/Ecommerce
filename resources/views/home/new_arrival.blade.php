@@ -2,7 +2,7 @@
     <div class="container">
        <div class="box">
           <div class="arrival_bg_box">
-             <img src="{{ asset('images/arrival-bg.png') }}" alt="">
+             <img src="{{ asset('images/bye.jpg') }}" alt="" style="object-fit: fill;">
           </div>
           <div class="row">
              <div class="col-md-6 ml-auto">

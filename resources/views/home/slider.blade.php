@@ -1,6 +1,7 @@
+
 <section class="slider_section ">
     <div class="slider_bg_box">
-       <img src="{{ asset('images/slider-bg.jpg') }}" alt="">
+       <img src="{{ asset('images/hi.jpg') }}" alt="" style="object-fit: fill;">
     </div>
     <div id="customCarousel1" class="carousel slide" data-ride="carousel">
        <div class="carousel-inner">
