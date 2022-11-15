@@ -1,66 +1,132 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+![219-2191800_laptop-frame-png-laptop-mock-up-png-transparent(1)](https://user-images.githubusercontent.com/87056067/201853866-206ebbdf-78fd-4e75-bcba-9bdf275189eb.jpg)
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
 
-## About Laravel
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+ ## Laravel:9  E-commerce Project 
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+This is a fully functional e-commerce project that allows customers to add products to their carts and place orders. Customer registration for this project requires email verification. Customers can remark on and respond to products. The customer can view product details and conduct a product search.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Additionally, via the admin dashboard, the admin may view all orders and email customers. Every order's receipt can be printed by the admin.
 
-## Learning Laravel
+## Features
+#Homepage description :
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- Customer can see all the product .
+- Customer can search for product.
+- Can see product details
+- Customer can comment and reply.
+- Customer can register with email verification
+- Customer can login and add product to their cart .
+- Customer has the the ability to order product using card or cash on delivery.
+- Customer can see all their order and also has the ability to cancel the order.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+#Admin Dashboard :
 
-## Laravel Sponsors
+- Admin can see all the Customer details
+- Admin can add product , delete or update them.
+- Admin can see all the order.
+- Admin has the ability to send mail to the customer from admin dashboard .
+- Admin can print receipt for a specific order.
+- Admin can see messages send by the Customer .
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+## Requirements  for this project
+-  XAMPP installed version 8 or higher
+- Composer installed
+- nodejs installed
+- Laravel install 
 
-### Premium Partners
+## Installation Steps 
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+1. First download the zip file the unzip it.
+2. Then open a cmd in the project directory.
+3. Run this command in the cmd 'composer update'.
+4. Create a database called 'ecommerceDB' using xampp.
+5. ecommerce.sql file is given in the zip file's main directory. Import that .sql file into your database.
+4. Add your email credentials in <code>.env</code> file
+5. Add your Stripe Key credentials in <code>.env</code> file
+6. Start yor project using <code>php artisan serve</code>
 
-## Contributing
+# Now your project is ready to serve.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
 
-## Code of Conduct
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### Dashboard Details
+- Admin : http://127.0.0.1:8000/redirect
+    -   Login Id : admin@gmail.com
+    -   Password : password
+- User  : http://127.0.0.1:8000/redirect
+         -   Login Id : apurba@mail.com
+         -   Password : password
+ 
+## Here are some Snippets of my project 
+
+### User Homapage
+<img width="960" alt="image" src="https://user-images.githubusercontent.com/87056067/201873986-4c66b1ad-f4c5-4642-babb-4c4d8df335c7.png">
+
+### Product section 
+
+#### Where user can search their desire products
+
+### User can add product to cart and also view the product details
+
+<img width="960" alt="image" src="https://user-images.githubusercontent.com/87056067/201938500-bca852ac-abb2-483e-a1ed-4a898cad7ad5.png">
+
+### Comment Section
+
+#### Where user can comment and also reply 
+
+<img width="960" alt="image" src="https://user-images.githubusercontent.com/87056067/201939383-eb853c56-7111-4ac5-aeca-047d12f0b925.png">
+
+### Cart section
+#### Where user can choose their payment option like card or Cash
+
+<img width="960" alt="image" src="https://user-images.githubusercontent.com/87056067/201940534-dbf39cf2-e1b7-4d95-a906-08ace51e8eb1.png">
+
+#### For card payment i used Stripe payment system
+
+<img width="960" alt="image" src="https://user-images.githubusercontent.com/87056067/201940951-4686efdd-8702-4eef-9feb-4cb68f2806ad.png">
+
+### Order section
+#### where user can show their order status , also they can cancel their order befor the delivery.
+
+<img width="960" alt="image" src="https://user-images.githubusercontent.com/87056067/201941330-aabc4ac4-0fc3-47b2-a144-ed9c76a5a43d.png">
+
+### Admin Dashboard
+
+
+<img width="960" alt="image" src="https://user-images.githubusercontent.com/87056067/201945607-d30c94e2-75c2-43e9-af28-5e66bac0ecfd.png">
+
+### Add Product
+#### Where admin can add product
+
+<img width="960" alt="image" src="https://user-images.githubusercontent.com/87056067/201945982-268a9ecf-44c6-455b-838e-bf935ed0f57d.png">
+
+### All product
+
+#### Where admin can view all product , edit product details and also admin can delete the product
+
+<img width="960" alt="image" src="https://user-images.githubusercontent.com/87056067/201946315-856912ae-c020-4b15-bac9-0acab154a92f.png">
+
+### Product Category Section
+
+
+<img width="960" alt="image" src="https://user-images.githubusercontent.com/87056067/201946882-e9dbaece-afdd-4e68-a974-ae2fa956b89b.png">
+
+### Admin Order section
+#### Where admin can view all the orders
+### Admin can send email to the customer
+### Also admin can print particular order.
+
+
+<img width="960" alt="image" src="https://user-images.githubusercontent.com/87056067/201947437-6d7fae40-bd51-46ba-ab86-c42b95d5092d.png">
 
 ## Security Vulnerabilities
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+If you discover a bug  within project, please send an e-mail to me via [apurbakumar33@gmail.com](apurbakumar33@gmail.com). If you have any suggestion for this project plaease contact me..it will encourge  me to keep updating this project.
+
+
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+The project developed using laravel framework is open-source software licensed under the [MIT license](https://opensource.org/licenses/MIT).
