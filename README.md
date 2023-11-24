@@ -38,7 +38,7 @@ Additionally, via the admin dashboard, the admin may view all orders and email c
 
 ## Installation Steps 
 
-1. First download the zip file the unzip it.
+1. First clone project or download the zip file the unzip it.
 2. Then open a cmd in the project directory.
 3. Run this command in the cmd 'composer update'.
 4. Create a database called 'ecommerceDB' using xampp.
